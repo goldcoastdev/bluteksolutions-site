@@ -1,80 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blutek Solutions</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet">
-</head>
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
 
-<body class="page">
+.page {
+    height: 100vh;
+    background: linear-gradient(135deg, #050B16, #0A1C33, #0F2F5C, #1B4F9C);
+    background-size: 300% 300%;
+    animation: bg 18s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
 
-    <div class="veil"></div>
-    <div class="grid"></div>
+@keyframes bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    <div class="wrap">
-        <div class="mark"></div>
-        <h1 class="title">Blutek Solutions</h1>
-        <p class="tagline">Where intelligence becomes infrastructure.</p>
-        <div class="pulse"></div>
-        <p class="sub">Precision. Innovation. Dominance.</p>
-    </div>
+.veil {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 10, 20, 0.45);
+    backdrop-filter: blur(14px);
+    z-index: 1;
+}
 
-    <section class="ascend">
-        <div class="ascend-glow"></div>
-        <h2 class="ascend-title">The Architecture of Intelligence</h2>
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.15;
+    animation: drift 22s linear infinite;
+    z-index: 1;
+}
 
-        <div class="ascend-pillars">
-            <div class="pillar">
-                <h3>Precision</h3>
-                <p>Systems engineered with intention, clarity, and absolute control.</p>
-            </div>
+@keyframes drift {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120px); }
+}
 
-            <div class="pillar">
-                <h3>Resilience</h3>
-                <p>Infrastructure designed to endure, adapt, and evolve without failure.</p>
-            </div>
+.wrap {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+    padding: 20px;
+    opacity: 0;
+    animation: fade 1.8s ease forwards;
+}
 
-            <div class="pillar">
-                <h3>Ascension</h3>
-                <p>Technology that elevates capability, insight, and human potential.</p>
-            </div>
-        </div>
-    </section>
+@keyframes fade {
+    to { opacity: 1; }
+}
 
-    <section class="capabilities">
-        <div class="cap-layer"></div>
-        <h2 class="cap-title">Capabilities</h2>
+.mark {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 28px;
+    border-left: 3px solid #8FB8FF;
+    border-bottom: 3px solid #8FB8FF;
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: rise 2.4s ease forwards;
+}
 
-        <div class="cap-grid">
-            <div class="cap-item">
-                <h3>Cyber Defense</h3>
-                <p>Threat detection, attack surface reduction, and proactive protection engineered for modern risk.</p>
-            </div>
+@keyframes rise {
+    0% { transform: translateY(18px) rotate(45deg); opacity: 0; }
+    100% { transform: translateY(0) rotate(45deg); opacity: 0.9; }
+}
 
-            <div class="cap-item">
-                <h3>Security Architecture</h3>
-                <p>Designing resilient infrastructures that safeguard data, identity, and operational continuity.</p>
-            </div>
+.title {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #EAF1FF, #BFD4FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 22px rgba(255,255,255,0.08);
+    opacity: 0;
+    animation: title 2.2s ease forwards;
+}
 
-            <div class="cap-item">
-                <h3>Incident Response</h3>
-                <p>Rapid containment, forensic clarity, and strategic recovery when every second matters.</p>
-            </div>
+@keyframes title {
+    0% { transform: translateY(18px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
 
-            <div class="cap-item">
-                <h3>Advisory & Consulting</h3>
-                <p>Guidance that transforms complexity into clarity, aligning security with business intelligence.</p>
-            </div>
-        </div>
-    </section>
+.tagline {
+    font-size: 1.35rem;
+    font-weight: 500;
+    opacity: 0;
+    margin-bottom: 55px;
+    color: #DCE6FF;
+    text-shadow: 0 0 14px rgba(255,255,255,0.06);
+    animation: tag 2.8s ease forwards;
+}
 
-    <section class="void">
-        <div class="void-field"></div>
-        <h2 class="void-line">The future belongs to the prepared.</h2>
-        <a href="#" class="void-cta">Initiate Contact</a>
-    </section>
+@keyframes tag {
+    to { opacity: 0.92; }
+}
 
-</body>
-</html>
+.pulse {
+    width: 18px;
+    height: 18px;
+    background: #1B4F9C;
+    border-radius: 50%;
+    margin: 0 auto 50px;
+    animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.8); opacity: 0.35; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+.sub {
+    font-size: 1.1rem;
+    opacity: 0;
+    letter-spacing: 1.2px;
+    animation: sub 3.2s ease forwards;
+}
+
+@keyframes sub {
+    to { opacity: 0.85; }
+}
