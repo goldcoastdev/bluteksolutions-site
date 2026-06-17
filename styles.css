@@ -137,38 +137,3 @@ html, body {
 @keyframes sub {
     to { opacity: 0.85; }
 }
-
-* Footer styles start here */
-.footer {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 4;
-}
-
-.footer-line {
-    width: 140px;
-    height: 1px;
-    margin: 0 auto 18px;
-    background: linear-gradient(90deg, transparent, #4A7DFF, transparent);
-    opacity: 0.35;
-}
-
-.footer-mark {
-    width: 18px;
-    height: 18px;
-    margin: 0 auto 14px;
-    border-left: 2px solid #8FB8FF;
-    border-bottom: 2px solid #8FB8FF;
-    transform: rotate(45deg);
-    opacity: 0.7;
-}
-
-.footer-text {
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    opacity: 0.55;
-    color: #DCE6FF;
-}
