@@ -1,20 +1,16 @@
-/* 0.01% DESIGNER MODE — MYSTERIOUS, CINEMATIC, ELITE */
-
-/* Base */
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
 }
 
-/* Cinematic Sapphire Background */
-.blue-body {
+.page {
     height: 100vh;
     background: linear-gradient(135deg, #050B16, #0A1C33, #0F2F5C, #1B4F9C);
     background-size: 300% 300%;
-    animation: gradientShift 18s ease infinite;
-    color: white;
+    animation: bg 18s ease infinite;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,78 +18,67 @@ body, html {
     position: relative;
 }
 
-@keyframes gradientShift {
+@keyframes bg {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Glass veil */
-.blue-overlay {
+.veil {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(5, 10, 20, 0.45);
     backdrop-filter: blur(14px);
     z-index: 1;
 }
 
-/* Subtle animated grid (intelligence layer) */
-.blue-grid {
+.grid {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image:
         linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     opacity: 0.15;
-    animation: gridFloat 22s linear infinite;
+    animation: drift 22s linear infinite;
     z-index: 1;
 }
 
-@keyframes gridFloat {
-    0% { transform: translateY(0px); }
+@keyframes drift {
+    0% { transform: translateY(0); }
     100% { transform: translateY(-120px); }
 }
 
-/* Content container */
-.blue-container {
+.wrap {
     position: relative;
     z-index: 3;
     max-width: 720px;
     padding: 20px;
-    animation: fadeIn 1.8s ease forwards;
     opacity: 0;
+    animation: fade 1.8s ease forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fade {
     to { opacity: 1; }
 }
 
-/* Evolved geometric mark */
-.geo-mark {
+.mark {
     width: 42px;
     height: 42px;
     margin: 0 auto 28px;
     border-left: 3px solid #8FB8FF;
     border-bottom: 3px solid #8FB8FF;
     transform: rotate(45deg);
-    opacity: 0.9;
-    animation: geoRise 2.4s ease forwards;
+    opacity: 0;
+    animation: rise 2.4s ease forwards;
 }
 
-@keyframes geoRise {
+@keyframes rise {
     0% { transform: translateY(18px) rotate(45deg); opacity: 0; }
-    100% { transform: translateY(0px) rotate(45deg); opacity: 0.9; }
+    100% { transform: translateY(0) rotate(45deg); opacity: 0.9; }
 }
 
-/* Title — dominant + curious */
-.blue-title {
+.title {
     font-family: 'Inter Tight', sans-serif;
     font-size: 4rem;
     font-weight: 900;
@@ -103,38 +88,34 @@ body, html {
     background: linear-gradient(90deg, #EAF1FF, #BFD4FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0px 0px 22px rgba(255, 255, 255, 0.08);
-    animation: titleRise 2.2s ease forwards;
+    text-shadow: 0 0 22px rgba(255,255,255,0.08);
     opacity: 0;
+    animation: title 2.2s ease forwards;
 }
 
-@keyframes titleRise {
+@keyframes title {
     0% { transform: translateY(18px); opacity: 0; }
-    100% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Tagline — intelligent + mysterious */
-.blue-tagline {
+.tagline {
     font-size: 1.35rem;
     font-weight: 500;
-    opacity: 0.92;
+    opacity: 0;
     margin-bottom: 55px;
     color: #DCE6FF;
-    text-shadow: 0px 0px 14px rgba(255, 255, 255, 0.06);
-    animation: taglineFade 2.8s ease forwards;
-    opacity: 0;
+    text-shadow: 0 0 14px rgba(255,255,255,0.06);
+    animation: tag 2.8s ease forwards;
 }
 
-@keyframes taglineFade {
-    0% { opacity: 0; }
-    100% { opacity: 0.92; }
+@keyframes tag {
+    to { opacity: 0.92; }
 }
 
-/* Soft Sapphire Pulse — heartbeat of the brand */
-.blue-pulse {
+.pulse {
     width: 18px;
     height: 18px;
-    background-color: #1B4F9C;
+    background: #1B4F9C;
     border-radius: 50%;
     margin: 0 auto 50px;
     animation: pulse 2.2s ease-in-out infinite;
@@ -146,16 +127,13 @@ body, html {
     100% { transform: scale(1); opacity: 0.9; }
 }
 
-/* Subtext */
-.blue-subtext {
+.sub {
     font-size: 1.1rem;
-    opacity: 0.85;
-    letter-spacing: 1.2px;
-    animation: subFade 3.2s ease forwards;
     opacity: 0;
+    letter-spacing: 1.2px;
+    animation: sub 3.2s ease forwards;
 }
 
-@keyframes subFade {
-    0% { opacity: 0; }
-    100% { opacity: 0.85; }
+@keyframes sub {
+    to { opacity: 0.85; }
 }
