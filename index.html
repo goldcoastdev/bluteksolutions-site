@@ -1,139 +1,27 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blutek Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Inter+Tight:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
 
-.page {
-    height: 100vh;
-    background: linear-gradient(135deg, #050B16, #0A1C33, #0F2F5C, #1B4F9C);
-    background-size: 300% 300%;
-    animation: bg 18s ease infinite;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
+<body class="page">
+    <div class="veil"></div>
+    <div class="grid"></div>
 
-@keyframes bg {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    <div class="wrap">
+        <div class="mark"></div>
 
-.veil {
-    position: absolute;
-    inset: 0;
-    background: rgba(5, 10, 20, 0.45);
-    backdrop-filter: blur(14px);
-    z-index: 1;
-}
+        <h1 class="title">Blutek Solutions</h1>
 
-.grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.15;
-    animation: drift 22s linear infinite;
-    z-index: 1;
-}
+        <p class="tagline">Where intelligence becomes infrastructure.</p>
 
-@keyframes drift {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-120px); }
-}
+        <div class="pulse"></div>
 
-.wrap {
-    position: relative;
-    z-index: 3;
-    max-width: 720px;
-    padding: 20px;
-    opacity: 0;
-    animation: fade 1.8s ease forwards;
-}
-
-@keyframes fade {
-    to { opacity: 1; }
-}
-
-.mark {
-    width: 42px;
-    height: 42px;
-    margin: 0 auto 28px;
-    border-left: 3px solid #8FB8FF;
-    border-bottom: 3px solid #8FB8FF;
-    transform: rotate(45deg);
-    opacity: 0;
-    animation: rise 2.4s ease forwards;
-}
-
-@keyframes rise {
-    0% { transform: translateY(18px) rotate(45deg); opacity: 0; }
-    100% { transform: translateY(0) rotate(45deg); opacity: 0.9; }
-}
-
-.title {
-    font-family: 'Inter Tight', sans-serif;
-    font-size: 4rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #EAF1FF, #BFD4FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 22px rgba(255,255,255,0.08);
-    opacity: 0;
-    animation: title 2.2s ease forwards;
-}
-
-@keyframes title {
-    0% { transform: translateY(18px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-}
-
-.tagline {
-    font-size: 1.35rem;
-    font-weight: 500;
-    opacity: 0;
-    margin-bottom: 55px;
-    color: #DCE6FF;
-    text-shadow: 0 0 14px rgba(255,255,255,0.06);
-    animation: tag 2.8s ease forwards;
-}
-
-@keyframes tag {
-    to { opacity: 0.92; }
-}
-
-.pulse {
-    width: 18px;
-    height: 18px;
-    background: #1B4F9C;
-    border-radius: 50%;
-    margin: 0 auto 50px;
-    animation: pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.9; }
-    50% { transform: scale(1.8); opacity: 0.35; }
-    100% { transform: scale(1); opacity: 0.9; }
-}
-
-.sub {
-    font-size: 1.1rem;
-    opacity: 0;
-    letter-spacing: 1.2px;
-    animation: sub 3.2s ease forwards;
-}
-
-@keyframes sub {
-    to { opacity: 0.85; }
-}
+        <p class="sub">Precision. Innovation. Dominance.</p>
+    </div>
+</body>
+</html>
